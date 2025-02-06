@@ -3,14 +3,123 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Kastoras.ViewModels"
+             xmlns:material="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Kastoras.Views.MainView"
              x:DataType="vm:MainViewModel">
   <Design.DataContext>
-    <!-- This only sets the DataContext for the previewer in an IDE,
-         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <vm:MainViewModel />
   </Design.DataContext>
 
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+  <Grid ColumnDefinitions="250,*">
+    <!-- Sidebar with improved styling -->
+    <Border Grid.Column="0" Background="#2c3e50" CornerRadius="0 15 15 0">
+      <StackPanel Margin="10" Spacing="15">
+        <TextBlock Text="Kastoras Dashboard" FontSize="22" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0 20"/>
+        
+        <!-- Navigation Buttons with Icons -->
+        <Button Content="Dashboard" Margin="5 8" HorizontalAlignment="Stretch" Height="40"
+                CornerRadius="8" FontSize="16">
+          <Button.ContentTemplate>
+            <DataTemplate>
+              <StackPanel Orientation="Horizontal" Spacing="10">
+                <material:MaterialIcon Kind="ViewDashboard" Foreground="White" Width="24"/>
+                <TextBlock Text="Dashboard" VerticalAlignment="Center" Foreground="White"/>
+              </StackPanel>
+            </DataTemplate>
+          </Button.ContentTemplate>
+          <Button.Styles>
+            <Style Selector="Button:pointerover /template/ ContentPresenter">
+              <Setter Property="Background" Value="#34495e"/>
+            </Style>
+          </Button.Styles>
+        </Button>
+        
+        <!-- Repeat similar button structure for other menu items -->
+        <Button Content="Inventory" Margin="5 8" Height="40" CornerRadius="8" FontSize="16">
+          <Button.ContentTemplate>
+            <DataTemplate>
+              <StackPanel Orientation="Horizontal" Spacing="10">
+                <material:MaterialIcon Kind="PackageVariant" Foreground="White" Width="24"/>
+                <TextBlock Text="Page 2!" VerticalAlignment="Center" Foreground="White"/>
+              </StackPanel>
+            </DataTemplate>
+          </Button.ContentTemplate>
+        </Button>
+        
+        <!-- Add similar buttons for Sales, Purchases, Finance, Reports -->
+      </StackPanel>
+    </Border>
+
+    <!-- Main Content Area with enhanced design -->
+    <Grid Grid.Column="1" Margin="15">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+
+      <!-- Header Section -->
+      <Border Grid.Row="0" CornerRadius="10" Background="#3498db" Margin="0 0 0 20">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20" Margin="20">
+          <TextBlock Text="{Binding Greeting}" FontSize="28" Foreground="White" FontWeight="Bold"/>
+          <material:MaterialIcon Kind="AccountCircle" Foreground="White" Width="36"/>
+        </StackPanel>
+      </Border>
+
+      <!-- Stats Cards -->
+      <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto">
+        <WrapPanel>
+          <Border Width="300" Height="150" CornerRadius="15" Background="White" 
+                  BoxShadow="2 2 8 #cccccc" Margin="0,0,20,20">
+            <StackPanel Margin="20" VerticalAlignment="Center">
+              <TextBlock Text="Total Sales" FontSize="16" Foreground="#7f8c8d"/>
+              <TextBlock Text="$42,560" FontSize="32" FontWeight="Bold" Foreground="#2ecc71"/>
+              <TextBlock Text="↑ 12% from last month" Foreground="#27ae60" FontSize="14"/>
+            </StackPanel>
+          </Border>
+
+          <Border Width="300" Height="150" CornerRadius="15" Background="White" 
+                  BoxShadow="2 2 8 #cccccc" Margin="0,0,20,20">
+            <StackPanel Margin="20" VerticalAlignment="Center">
+              <TextBlock Text="Inventory Value" FontSize="16" Foreground="#7f8c8d"/>
+              <TextBlock Text="$156,230" FontSize="32" FontWeight="Bold" Foreground="#e67e22"/>
+              <TextBlock Text="3 low stock items" Foreground="#d35400" FontSize="14"/>
+            </StackPanel>
+          </Border>
+
+          <Border Width="300" Height="150" CornerRadius="15" Background="White" 
+                  BoxShadow="2 2 8 #cccccc" Margin="0,0,20,20">
+            <StackPanel Margin="20" VerticalAlignment="Center">
+              <TextBlock Text="Pending Orders" FontSize="16" Foreground="#7f8c8d"/>
+              <TextBlock Text="24" FontSize="32" FontWeight="Bold" Foreground="#e74c3c"/>
+              <TextBlock Text="5 urgent shipments" Foreground="#c0392b" FontSize="14"/>
+            </StackPanel>
+          </Border>
+        </WrapPanel>
+      </ScrollViewer>
+
+      <!-- Chart Section -->
+      <Border Grid.Row="2" CornerRadius="15" Background="White" Margin="0 20 0 0"
+              BoxShadow="2 2 8 #cccccc">
+        <Grid Margin="20">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+          
+          <TextBlock Text="Sales Overview" FontSize="18" FontWeight="Bold" Foreground="#2c3e50"/>
+          <Rectangle Grid.Row="1" Margin="0 20 0 0" Height="200">
+            <Rectangle.Fill>
+              <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#3498db" Offset="0"/>
+                <GradientStop Color="#2980b9" Offset="1"/>
+              </LinearGradientBrush>
+            </Rectangle.Fill>
+          </Rectangle>
+        </Grid>
+      </Border>
+    </Grid>
+  </Grid>
 </UserControl>
