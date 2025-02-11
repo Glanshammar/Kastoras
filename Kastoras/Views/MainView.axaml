@@ -24,7 +24,8 @@
                 kastoras:ButtonExtensions.IsStretched="True"
                 />
         
-        <Button Content="Financial"></Button>
+        <Button Content="Financial"
+                Click="Button_OnClick"></Button>
         
         <!-- Add similar buttons for Sales, Purchases, Finance, Reports -->
       </StackPanel>
