@@ -11,7 +11,7 @@
     </Design.PreviewWith>
     
     <Styles.Resources>
-        <global:IsNotNullConverter x:Key="ObjectIsNotNullConverter"/>
+        <converters:IsNotNullConverter x:Key="ObjectIsNotNullConverter"/>
     </Styles.Resources>
 
     <!-- Default button style -->
