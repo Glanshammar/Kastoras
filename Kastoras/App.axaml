@@ -13,5 +13,16 @@
     <Application.Styles>
         <FluentTheme />
         <materialIcons:MaterialIconStyles />
+        <StyleInclude Source="Styles/ApplicationDefaultStyles.axaml"></StyleInclude>
     </Application.Styles>
+             
+     <Application.Resources>
+         <Color x:Key="StartColor">#FF6B6B</Color>
+         <Color x:Key="EndColor">#4ECDC4</Color>
+
+         <LinearGradientBrush x:Key="MyGradient" StartPoint="0%,0%" EndPoint="100%,100%">
+             <GradientStop Color="{DynamicResource StartColor}" Offset="0.0"/>
+             <GradientStop Color="{DynamicResource EndColor}" Offset="1.0"/>
+         </LinearGradientBrush>
+     </Application.Resources>
 </Application>
