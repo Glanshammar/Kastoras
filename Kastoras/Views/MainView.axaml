@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Kastoras.ViewModels"
              xmlns:material="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:kastoras="clr-namespace:Kastoras"
+             mc:Ignorable="d" d:DesignWidth="1800" d:DesignHeight="1000"
              x:Class="Kastoras.Views.MainView"
              x:DataType="vm:MainViewModel">
   <Design.DataContext>
@@ -19,34 +20,11 @@
                    HorizontalAlignment="Center" Foreground="White" Margin="0 20"/>
         
         <!-- Navigation Buttons with Icons -->
-        <Button Content="Dashboard" Margin="5 8" HorizontalAlignment="Stretch" Height="40"
-                CornerRadius="8" FontSize="16">
-          <Button.ContentTemplate>
-            <DataTemplate>
-              <StackPanel Orientation="Horizontal" Spacing="10">
-                <material:MaterialIcon Kind="ViewDashboard" Foreground="White" Width="24"/>
-                <TextBlock Text="Dashboard" VerticalAlignment="Center" Foreground="White"/>
-              </StackPanel>
-            </DataTemplate>
-          </Button.ContentTemplate>
-          <Button.Styles>
-            <Style Selector="Button:pointerover /template/ ContentPresenter">
-              <Setter Property="Background" Value="#34495e"/>
-            </Style>
-          </Button.Styles>
-        </Button>
+        <Button Content="Stretched Button" 
+                kastoras:ButtonExtensions.IsStretched="True"
+                />
         
-        <!-- Repeat similar button structure for other menu items -->
-        <Button Content="Inventory" Margin="5 8" Height="40" CornerRadius="8" FontSize="16">
-          <Button.ContentTemplate>
-            <DataTemplate>
-              <StackPanel Orientation="Horizontal" Spacing="10">
-                <material:MaterialIcon Kind="PackageVariant" Foreground="White" Width="24"/>
-                <TextBlock Text="Page 2!" VerticalAlignment="Center" Foreground="White"/>
-              </StackPanel>
-            </DataTemplate>
-          </Button.ContentTemplate>
-        </Button>
+        <Button Content="Financial"></Button>
         
         <!-- Add similar buttons for Sales, Purchases, Finance, Reports -->
       </StackPanel>
