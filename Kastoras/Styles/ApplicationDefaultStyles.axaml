@@ -1,18 +1,14 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="using:Kastoras"
-        xmlns:converters="clr-namespace:Kastoras.Converters;"
-        xmlns:global="clr-namespace:">
+        xmlns:global="clr-namespace:"
+        >
 
     <Design.PreviewWith>
         <Border Margin="5">
             <Button Content="Hello World!"></Button>
         </Border>
     </Design.PreviewWith>
-    
-    <Styles.Resources>
-        <converters:IsNotNullConverter x:Key="ObjectIsNotNullConverter"/>
-    </Styles.Resources>
 
     <!-- Default button style -->
     <Style Selector="Button">
