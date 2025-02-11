@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
 using Kastoras.ViewModels;
 using Kastoras.Views;
@@ -38,22 +39,27 @@ public partial class App : Application
 
 public class ButtonExtensions : AvaloniaObject
 {
-    public static readonly AttachedProperty<IImage> IconSourceProperty =
-        AvaloniaProperty.RegisterAttached<ButtonExtensions, Button, IImage>("IconSource");
-
     public static readonly AttachedProperty<bool> IsStretchedProperty =
         AvaloniaProperty.RegisterAttached<ButtonExtensions, Button, bool>("IsStretched");
 
     // Getters and setters
-    public static void SetIconSource(Button element, IImage value) 
-        => element.SetValue(IconSourceProperty, value);
-    
-    public static IImage GetIconSource(Button element) 
-        => element.GetValue(IconSourceProperty);
-    
-    public static void SetIsStretched(Button element, bool value) 
+    public static void SetIsStretched(Button element, bool value)
         => element.SetValue(IsStretchedProperty, value);
-    
-    public static bool GetIsStretched(Button element) 
+
+    public static bool GetIsStretched(Button element)
         => element.GetValue(IsStretchedProperty);
+
+    // Static constructor to listen for property changes
+    static ButtonExtensions()
+    {
+        IsStretchedProperty.Changed.AddClassHandler<Button>((button, e) =>
+            OnIsStretchedChanged(button, (bool)e.NewValue!));
+    }
+
+    // Handle property change
+    private static void OnIsStretchedChanged(Button button, bool isStretched)
+    {
+        button.HorizontalAlignment = isStretched ? HorizontalAlignment.Stretch : HorizontalAlignment.Center;
+        button.VerticalAlignment = isStretched ? VerticalAlignment.Stretch : VerticalAlignment.Center;
+    }
 }
