@@ -24,4 +24,9 @@
         <PackageReference Include="Material.Icons.Avalonia" />
         <PackageReference Include="ReactiveUI" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Controls\" />
+      <Folder Include="Converters\" />
+    </ItemGroup>
 </Project>
