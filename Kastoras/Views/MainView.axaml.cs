@@ -15,6 +15,6 @@ public partial class MainView : UserControl
 
     private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
-        Console.WriteLine("Clicked!");
+        Console.WriteLine($"Clicked by {sender.GetHashCode()} with type {sender.GetType().Name}");
     }
 }

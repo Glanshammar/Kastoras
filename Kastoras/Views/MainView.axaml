@@ -5,6 +5,7 @@
              xmlns:vm="clr-namespace:Kastoras.ViewModels"
              xmlns:material="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:kastoras="clr-namespace:Kastoras"
+             xmlns:controls="clr-namespace:Kastoras.Controls"
              mc:Ignorable="d" d:DesignWidth="1800" d:DesignHeight="1000"
              x:Class="Kastoras.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -20,14 +21,18 @@
                    HorizontalAlignment="Center" Foreground="White" Margin="0 20"/>
         
         <!-- Navigation Buttons with Icons -->
-        <Button Content="Stretched Button" 
-                kastoras:ButtonExtensions.IsStretched="True"
-                />
+        <Button HorizontalAlignment="Stretch">
+          <StackPanel Orientation="Horizontal">
+            <Image Source="../Assets/avalonia-logo.ico" HorizontalAlignment="Left"/>
+            <TextBlock Text="Dashboard" VerticalAlignment="Center"/>
+          </StackPanel>
+        </Button>
+        
+        <controls:IconButton Text="IconButton" Icon="../Assets/avalonia-logo.ico" HorizontalAlignment="Stretch" Click="Button_OnClick" />
         
         <Button Content="Financial"
                 Click="Button_OnClick"></Button>
         
-        <!-- Add similar buttons for Sales, Purchases, Finance, Reports -->
       </StackPanel>
     </Border>
 
