@@ -8,6 +8,10 @@
             <Button Content="Hello World!"></Button>
         </Border>
     </Design.PreviewWith>
+    
+    <Style Selector="Window">
+        <Setter Property="Background" Value="{DynamicResource BackgroundColor}"/>
+    </Style>
 
     <!-- Default button style -->
     <Style Selector="Button">
@@ -15,7 +19,7 @@
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="Height" Value="40"/>
         <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="Background" Value="{DynamicResource MyGradient}"/>
+        <Setter Property="Background" Value="{DynamicResource ButtonColor}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="CornerRadius" Value="8"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -38,5 +42,9 @@
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="VerticalAlignment" Value="Stretch"/>
         </Style>
+    </Style>
+    
+    <Style Selector="Button:pointerover">
+        <Setter Property="Background" Value="Red" />
     </Style>
 </Styles>

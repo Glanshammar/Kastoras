@@ -15,7 +15,7 @@
 
   <Grid ColumnDefinitions="250,*">
     <!-- Sidebar with improved styling -->
-    <Border Grid.Column="0" Background="#2c3e50" CornerRadius="0 15 15 0">
+    <Border Grid.Column="0" Background="{DynamicResource SecondaryColor}" CornerRadius="0 15 15 0">
       <StackPanel Margin="10" Spacing="15">
         <TextBlock Text="Kastoras Dashboard" FontSize="22" FontWeight="Bold" 
                    HorizontalAlignment="Center" Foreground="White" Margin="0 20"/>
@@ -30,8 +30,11 @@
         
         <controls:IconButton Text="IconButton" Icon="../Assets/avalonia-logo.ico" HorizontalAlignment="Stretch" Click="Button_OnClick" />
         
-        <Button Content="Financial"
-                Click="Button_OnClick"></Button>
+        <Button Content="Light Mode"
+                Click="LightMode"></Button>
+        
+        <Button Content="Dark Mode"
+                Click="DarkMode"></Button>
         
       </StackPanel>
     </Border>

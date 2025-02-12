@@ -18,10 +18,16 @@
     </Application.Styles>
              
      <Application.Resources>
+         <SolidColorBrush x:Key="ButtonHoverBackground" Color="Yellow"/>
+         
          <Color x:Key="StartColor">#FF6B6B</Color>
          <Color x:Key="EndColor">#4ECDC4</Color>
          <Color x:Key="HoverStartColor">#FF5555</Color>
          <Color x:Key="HoverEndColor">#3DBDAA</Color>
+         
+         <Color x:Key="BackgroundColor">#E0FBFC</Color>
+         <Color x:Key="SecondaryColor">#3D5A80</Color>
+         <Color x:Key="ButtonColor">#247CFF</Color>
 
          <LinearGradientBrush x:Key="MyGradient" StartPoint="0%,0%" EndPoint="100%,100%">
              <GradientStop Color="{DynamicResource StartColor}" Offset="0.0"/>
@@ -32,6 +38,5 @@
              <GradientStop Color="{DynamicResource HoverStartColor}" Offset="0.0"/>
              <GradientStop Color="{DynamicResource HoverEndColor}" Offset="1.0"/>
          </LinearGradientBrush>
-         
      </Application.Resources>
 </Application>

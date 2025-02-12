@@ -15,6 +15,17 @@ public partial class App : Application
     {
         AvaloniaXamlLoader.Load(this);
     }
+    
+    public void UpdateUserColors(Color customBackground, Color customSecondary, Color buttonColor)
+    {
+        // Access the application resources
+        var resources = Application.Current.Resources;
+
+        // Update the colors
+        resources["BackgroundColor"] = customBackground;
+        resources["SecondaryColor"] = customSecondary;
+        resources["ButtonColor"] = buttonColor;
+    }
 
     public override void OnFrameworkInitializationCompleted()
     {
