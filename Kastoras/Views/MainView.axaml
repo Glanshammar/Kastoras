@@ -23,18 +23,21 @@
         <!-- Navigation Buttons with Icons -->
         <Button HorizontalAlignment="Stretch">
           <StackPanel Orientation="Horizontal">
-            <Image Source="../Assets/avalonia-logo.ico" HorizontalAlignment="Left"/>
+            <Image Source="../Assets/Beaver (1).png" RenderOptions.BitmapInterpolationMode="HighQuality" HorizontalAlignment="Left"/>
             <TextBlock Text="Dashboard" VerticalAlignment="Center"/>
           </StackPanel>
         </Button>
         
-        <controls:IconButton Text="IconButton" Icon="../Assets/avalonia-logo.ico" HorizontalAlignment="Stretch" Click="Button_OnClick" />
+        <controls:IconButton Content="Click Me" 
+                             Icon="/Assets/Beaver (3).png" RenderOptions.BitmapInterpolationMode="HighQuality"
+                             Command="{Binding IconButtonCommand}"/>
+
         
         <Button Content="Light Mode"
-                Click="LightMode"></Button>
-        
+                Command="{Binding LightModeCommand}"/>
+
         <Button Content="Dark Mode"
-                Click="DarkMode"></Button>
+                Command="{Binding DarkModeCommand}"/>
         
       </StackPanel>
     </Border>

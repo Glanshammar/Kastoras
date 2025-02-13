@@ -1,0 +1,27 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <Button Content="IconButton"
+                    Classes="IconTextButton"
+                    Tag="{DynamicResource BeaverIco}"/>
+        </Border>
+    </Design.PreviewWith>
+
+    <Style Selector="Button.IconButton">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Button HorizontalAlignment="Stretch">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{TemplateBinding Tag}"
+                               RenderOptions.BitmapInterpolationMode="HighQuality"
+                               HorizontalAlignment="Left" />
+                        <TextBlock Text="{TemplateBinding Content}"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>

@@ -14,7 +14,7 @@
         <FluentTheme />
         <materialIcons:MaterialIconStyles />
         <StyleInclude Source="Styles/ApplicationDefaultStyles.axaml"></StyleInclude>
-        <StyleInclude Source="Styles/IconButton.axaml"></StyleInclude>
+        <StyleInclude Source="Styles/IconTextButton.axaml"></StyleInclude>
     </Application.Styles>
              
      <Application.Resources>
