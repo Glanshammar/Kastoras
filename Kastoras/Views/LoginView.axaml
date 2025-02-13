@@ -1,0 +1,111 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Kastoras.Views.LoginView">
+    <UserControl.Styles>
+        <Style Selector="TextBlock.header">
+            <Setter Property="FontSize" Value="32"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="0 20"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        
+        <Style Selector="TextBox">
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Margin" Value="0 5"/>
+        </Style>
+        
+        <Style Selector="Button.login">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="0 20 0 0"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+        </Style>
+        
+        <Style Selector="Button.social">
+            <Setter Property="Margin" Value="10 5"/>
+            <Setter Property="Padding" Value="15 8"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+        
+        <!-- Google style using class -->
+        <Style Selector="Button.social.google">
+            <Setter Property="Background" Value="#DB4437"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </UserControl.Styles>
+
+    <Grid>
+        <!-- Background Image with Overlay -->
+        <Grid.Background>
+            <ImageBrush Source="/Assets/city.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        
+        <!-- Dark overlay -->
+        <Rectangle Fill="#CC000000"/>
+        
+        <Grid RowDefinitions="Auto,*">
+            <!-- Header -->
+            <TextBlock Text="Welcome to Kastoras!" 
+                       HorizontalAlignment="Center"
+                       Classes="header"/>
+
+            <!-- Login Form Container -->
+            <Grid Grid.Row="1" VerticalAlignment="Center">
+                <Border Background="#FFFFFF" 
+                        CornerRadius="8"
+                        Padding="30"
+                        HorizontalAlignment="Center"
+                        BoxShadow="0 5 15 #33000000">
+                    <StackPanel>
+                        <!-- Username -->
+                        <TextBlock Text="Username"/>
+                        <TextBox/>
+                        
+                        <!-- Password -->
+                        <TextBlock Text="Password" Margin="0 15 0 0"/>
+                        <TextBox PasswordChar="•"/>
+                        
+                        <!-- Login Button -->
+                        <Button Content="Login" 
+                                Classes="login"
+                                HorizontalAlignment="Stretch"/>
+                        
+                        <!-- Separator -->
+                        <Border Background="#EEEEEE" Height="1" Margin="0 20"/>
+                        
+                        <!-- Social Login -->
+                        <TextBlock Text="Or continue with" 
+                                   Margin="0 10"
+                                   HorizontalAlignment="Center"/>
+                        
+                        <!-- Google Login Button -->
+                        <Button Classes="social google" HorizontalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <Image Source="/Assets/avalonia-logo.ico" Width="20" Height="20"/>
+                                <TextBlock Text="Google"/>
+                            </StackPanel>
+                        </Button>
+                        
+                        <!-- Registration Link -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15">
+                            <TextBlock Text="Don't have an account? "/>
+                            <Button Click="OnRegisterClick" 
+                                    Background="Transparent"
+                                    Padding="0"
+                                    BorderThickness="0">
+                                <TextBlock Text="Register here" 
+                                           TextDecorations="Underline"
+                                           Foreground="#2b5876"/>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
