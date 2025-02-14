@@ -1,10 +1,10 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:Kastoras.Controls">
     <Design.PreviewWith>
         <Border Padding="20">
-            <Button Content="IconButton"
-                    Classes="IconTextButton"
-                    Tag="{DynamicResource BeaverIco}"/>
+            <controls:IconButton Content="Hello World!"
+                                 Icon="/Assets/Beaver (3).png" RenderOptions.BitmapInterpolationMode="HighQuality"/>
         </Border>
     </Design.PreviewWith>
 

@@ -1,6 +1,5 @@
 using Avalonia.Controls;
 using Kastoras.ViewModels;
-using Kastoras.Controls;
 
 namespace Kastoras.Views;
 
