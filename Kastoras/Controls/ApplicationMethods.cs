@@ -36,4 +36,9 @@ public class ApplicationMethods : UserControl
         App app = (App)Application.Current;
         app.UpdateUserColors(backgroundColor, secondaryColor, buttonColor);
     }
+
+    public static void ChangeColor(object sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
 }

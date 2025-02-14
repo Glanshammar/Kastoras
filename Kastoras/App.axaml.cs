@@ -26,6 +26,12 @@ public partial class App : Application
         resources["SecondaryColor"] = customSecondary;
         resources["ButtonColor"] = buttonColor;
     }
+    
+    public void UpdateSingleColor(string colorResource, Color customColor)
+    {
+        var resources = Application.Current.Resources;
+        resources[colorResource] = customColor;
+    }
 
     public override void OnFrameworkInitializationCompleted()
     {
