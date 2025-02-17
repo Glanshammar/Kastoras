@@ -28,6 +28,8 @@
          <Color x:Key="BackgroundColor">#E0FBFC</Color>
          <Color x:Key="SecondaryColor">#3D5A80</Color>
          <Color x:Key="ButtonColor">#247CFF</Color>
+         <Color x:Key="AccentColor">#EE6C4D</Color>
+         <Color x:Key="TextColor">#293241</Color>
 
          <LinearGradientBrush x:Key="MyGradient" StartPoint="0%,0%" EndPoint="100%,100%">
              <GradientStop Color="{DynamicResource StartColor}" Offset="0.0"/>
