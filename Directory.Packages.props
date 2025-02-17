@@ -15,8 +15,13 @@
     <PackageVersion Include="Avalonia.Browser" Version="11.2.1" />
     <PackageVersion Include="Avalonia.Android" Version="11.2.1" />
     <PackageVersion Include="Avalonia.ReactiveUI" Version="11.2.3" />
+    <PackageVersion Include="LiveChartsCore.SkiaSharpView.Avalonia" Version="2.0.0-rc5.1" />
     <PackageVersion Include="Material.Icons.Avalonia" Version="2.2.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.2" />
+    <PackageVersion Include="OxyPlot.Avalonia" Version="2.1.0" />
     <PackageVersion Include="ReactiveUI" Version="20.1.63" />
+    <PackageVersion Include="SQLite" Version="3.13.0" />
     <PackageVersion Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.1" />
   </ItemGroup>
 </Project>
