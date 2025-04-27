@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-Kastoras",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/ProjectA/ProjectA.csproj",
+        "/property:GenerateFullPaths=true"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "build-Kastoras-Desktop",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/ProjectB/ProjectB.csproj",
+        "/property:GenerateFullPaths=true"
+      ],
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

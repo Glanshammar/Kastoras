@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Kastoras Core",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "build-Kastoras",
+        "program": "${workspaceFolder}/Kastoras/bin/Debug/net9.0/ProjectA.dll",
+        "args": [],
+        "console": "integratedTerminal",
+        "linux": {
+          "cwd": "${workspaceFolder}/Kastoras"
+        },
+        "windows": {
+          "cwd": "${workspaceFolder}\\Kastoras"
+        }
+      },
+      {
+        "name": "Kastoras Desktop",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "build-Kastoras-Desktop",
+        "program": "${workspaceFolder}/Kastoras.Desktop/bin/Debug/net9.0/ProjectB.dll",
+        "args": [],
+        "console": "integratedTerminal",
+        "linux": {
+          "cwd": "${workspaceFolder}/Kastoras.Desktop"
+        },
+        "windows": {
+          "cwd": "${workspaceFolder}\\Kastoras.Desktop"
+        }
+      }
+    ],
+    "compounds": [
+      {
+        "name": "Core & Desktop",
+        "configurations": [
+          "Kastoras Core",
+          "Kastoras Desktop"
+        ]
+      }
+    ]
+  }
+  
