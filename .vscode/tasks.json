@@ -7,7 +7,7 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/ProjectA/ProjectA.csproj",
+        "${workspaceFolder}/Kastoras/Kastoras.csproj",
         "/property:GenerateFullPaths=true"
       ],
       "problemMatcher": "$msCompile"
@@ -18,7 +18,7 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/ProjectB/ProjectB.csproj",
+        "${workspaceFolder}/Kastoras.Desktop/Kastoras.Desktop.csproj",
         "/property:GenerateFullPaths=true"
       ],
       "problemMatcher": "$msCompile"
